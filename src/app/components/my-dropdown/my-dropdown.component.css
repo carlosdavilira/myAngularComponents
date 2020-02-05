@@ -1,0 +1,18 @@
+.list-group{
+    max-height: 300px;
+    margin-bottom: 10px;
+    overflow:scroll;
+    -webkit-overflow-scrolling: touch;
+}
+.search-bar{
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+.map-menu-comp button{
+    background-color: #136A8A;
+    border: none;
+}
+
+button.ui-corner-left {
+    display: none !important;
+}

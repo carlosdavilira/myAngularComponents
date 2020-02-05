@@ -1,0 +1,20 @@
+<p>my-dropdown works!</p>
+<div class="form-inline map-menu-comp button">
+    <i class="glyphicon glyphicon-resize-small" aria-hidden="true"></i>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button"  (click)="clickDropDown()" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+        
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <form class="form-inline active-cyan-3 search-bar">
+                <input type="text" [(ngModel)]="filtro" class="form-control form-control-sm mr-3 w-75" placeholder="Search"
+                aria-label="Search" [ngModelOptions]="{standalone: true}">
+                <i class="fas fa-search" aria-hidden="true"></i>
+            </form>
+        <ul class="list-group">    
+          <li class="dropdown-item list-group-item" *ngFor="let element of filterList()" (click)="OnclickElement(element)">{{element}}</li>
+        </ul>    
+    </div>
+    </div>
+  </div>
+  
