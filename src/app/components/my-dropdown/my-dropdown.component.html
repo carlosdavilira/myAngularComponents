@@ -1,20 +1,20 @@
-<p>my-dropdown works!</p>
-<div class="form-inline map-menu-comp button">
-    <i class="glyphicon glyphicon-resize-small" aria-hidden="true"></i>
-    <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button"  (click)="clickDropDown()" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-        
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <form class="form-inline active-cyan-3 search-bar">
-                <input type="text" [(ngModel)]="filtro" class="form-control form-control-sm mr-3 w-75" placeholder="Search"
-                aria-label="Search" [ngModelOptions]="{standalone: true}">
-                <i class="fas fa-search" aria-hidden="true"></i>
-            </form>
-        <ul class="list-group">    
-          <li class="dropdown-item list-group-item" *ngFor="let element of filterList()" (click)="OnclickElement(element)">{{element}}</li>
-        </ul>    
-    </div>
-    </div>
+<div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">
+      <span aria-hidden="true" class="ui-button-icon-left ui-clickable fa fa-fw fa-check spam-button-drop"></span>
+      <i class="fa fa-caret-down"></i>
+    </button>     
+
+  <!-- <div id="myDropdown" class="dropdown-content">
+    <input type="text" *ngIf="filter" [(ngModel)]="filtro" placeholder="Procurar.." id="myInput" onkeyup="filterFunction()">
+    <a  *ngFor="let element of filterList()" (click)="onClickElement(element)">{{element.label}}</a>
+    <a *ngIf="filterList() == false">Nenhum elemento encontrado</a>
+  </div> -->
+
+  <div id="myDropdown" class="dropdown-content">
+    <input type="text" *ngIf="filter" [(ngModel)]="filtro" placeholder="Procurar.." id="myInput" onkeyup="filterFunction()">
+    <a class="section-list" *ngIf="filterList().length > 0"> Seção</a>
+    <a *ngFor="let element of filterList()" (click)="onClickElement(element)" class="item-list">   {{element.label}}</a>
+    <a *ngIf="filterList() == false">Nenhum elemento encontrado</a>
+
   </div>
-  
+</div>

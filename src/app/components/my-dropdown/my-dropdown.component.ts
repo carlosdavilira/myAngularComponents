@@ -8,9 +8,15 @@ import { Component, OnInit, Input } from '@angular/core';
 
 export class MyDropdownComponent implements OnInit {
 
+
   @Input('list') list = [];
+  @Input('filter') filter = true;
+  @Input('Icon') Icon;// =  {"class = 'ui-button-icon-left ui-clickable fa fa-fw fa-check spam-button-drop'"};
   filtro:string = '';
-  searchBar = false;
+ 
+  visible = true;
+
+  
   constructor() {
   
    }
@@ -20,7 +26,7 @@ export class MyDropdownComponent implements OnInit {
         return this.list;
       }
       return this.list.filter((v) => {
-        if(v.toLowerCase().indexOf(this.filtro.toLowerCase()) >=0 ){
+        if(v.label.toLowerCase().indexOf(this.filtro.toLowerCase()) >=0 ){
           return true;
         }
         return false;   
@@ -28,12 +34,31 @@ export class MyDropdownComponent implements OnInit {
   }
 
   OnclickElement(element:string){
+    console.log(element)
     alert(element);
   }
-  clickDropDown = () => this.filtro = '';
+  onclickDropDown = () => {
+    if(this.list.length <= 0)
+      this.visible = false;
+    else  
+      this.visible = true;
+    
+    this.filtro = '';
+  }
 
   ngOnInit() {
     
   }
+  myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+
+  onClickElement(element){
+    console.log(element);
+    element.command();
+
+  }
+  
+  
 
 }
